@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('registrar_juego');
+    return view('registrar_consola');
 });
 Route::get('/registrar_juego', function(){
     return view('registrar_juego');

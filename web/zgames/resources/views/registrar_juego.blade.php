@@ -8,7 +8,7 @@
         <input class="form-control" type="text" id="nombre">
     </div>
     <div class="form-group">
-        <label for=""></label>
+        
     </div>
 </form>
 @endsection

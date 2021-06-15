@@ -8,11 +8,8 @@
         <input class="form-control" type="text" id="nombre">
     </div>
     <div class="form-group">
-        <label class="form-label" for="marca">Marca</label>
-        <select class="form-control" id="marca">
-            <option value="1">Microsoft</option>
-            <option value="2">Sony</option>
-            <option value="3">Nintendo</option>
+        <label class="form-label" for="marca-select">Marca</label>
+        <select class="form-control" id="marca-select">
         </select>
     </div>
     <div class="form-group">
@@ -21,4 +18,7 @@
     </div>
     <button type="submit" class="btn btn-primary float-right">Agregar</button>
 </form>
+@endsection
+@section('javascript')
+    <script src="{{asset('js/home.js')}}"></script>
 @endsection
