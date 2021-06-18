@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; 
 
 use Illuminate\Http\Request;
+use App\Models\Consola;
 
 class ConsolaController extends Controller
 {
@@ -10,5 +11,10 @@ class ConsolaController extends Controller
         $marcas = ["Sony", "Microsoft", "Nintendo", "Sega"];
 
         return $marcas;
+    }
+
+    public function getConsolas(){
+        $consolas = Consola::all();
+        return $consolas;
     }
 }
