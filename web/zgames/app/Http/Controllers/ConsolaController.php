@@ -7,6 +7,18 @@ use App\Models\Consola;
 
 class ConsolaController extends Controller
 {
+    public function crearConsola(Request $request){
+        $input = $request->all();
+
+        $consola = new Consola();
+        $consola->Nombre = $input["nombre"];
+        $consola->Marca = $input["marca"];
+        $consola->anno = $input["anno"];
+
+        $consola->save();
+        return $consola;
+    }
+
     public function getMarcas(){
         $marcas = ["Sony", "Microsoft", "Nintendo", "Sega"];
 

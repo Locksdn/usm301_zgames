@@ -11,3 +11,17 @@ const cargarMarcas = async()=>{
 }
 
 cargarMarcas();
+
+document.querySelector("#registrar-btn").addEventListener("click", async()=>{
+    let nombre = document.querySelector('#nombre').value;
+    let marca = document.querySelector('#marca-select').value;
+    let anno = document.querySelector('#anno').value;
+
+    let consola = {};
+    consola.nombre = nombre;
+    consola.marca = marca;
+    consola.anno = anno;
+
+    let res = await crearConsola(consola);
+    Swal.fire('Consola agregada');
+});

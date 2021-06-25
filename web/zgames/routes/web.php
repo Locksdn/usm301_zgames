@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('registrar_consola');
+    return view('home');
 });
 Route::get('/registrar_juego', function(){
     return view('registrar_juego');
 });
 Route::get('/registrar_consola', function(){
-    return view('registrar_consola');
+    return view('home');
 });
 Route::get('/ver_consolas', function(){
     return view('ver_consolas');
