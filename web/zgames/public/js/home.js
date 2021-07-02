@@ -10,7 +10,9 @@ const cargarMarcas = async()=>{
     });
 }
 
-cargarMarcas();
+document.addEventListener("DOMContentLoaded", () =>{
+    cargarMarcas();
+});
 
 document.querySelector("#registrar-btn").addEventListener("click", async()=>{
     let nombre = document.querySelector('#nombre').value;
