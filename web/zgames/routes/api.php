@@ -24,3 +24,5 @@ Route::get("marcas/get", [ConsolaController::class, "getMarcas"]);
 Route::get("consolas/get", [ConsolaController::class, "getConsolas"]);
 
 Route::post("consolas/post", [ConsolaController::class, "crearConsola"]);
+
+Route::post("consolas/delete", [ConsolaController::class, "eliminarConsola"]);

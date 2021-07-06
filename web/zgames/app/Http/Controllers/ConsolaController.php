@@ -29,4 +29,15 @@ class ConsolaController extends Controller
         $consolas = Consola::all();
         return $consolas;
     }
+
+    public function eliminarConsola(Request $request){
+        $input = $request->all();
+        $id = $input["id"];
+
+        $consola = Consola::findOrFail($id);
+
+        $consola->delete();
+
+        return "OK.";
+    }
 }

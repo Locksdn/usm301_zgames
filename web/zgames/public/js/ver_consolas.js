@@ -1,5 +1,28 @@
+const iniciarEliminacion = async function(){
+    let id = this.idConsola;
+    
+    let resp = await Swal.fire({
+        title:"Estas Seguro?",
+        text:"Esta accion es irreversible",
+        icon: 'error',
+        showCancelButton:true
+    });
+    if (resp.isConfirmed){
+        
+        if (await eliminarConsola(id)){
+            cargarTabla(await getConsolas());
+            Swal.fire("Consola eliminada", "Consola eliminada exitosamente", "info");
+        } else {
+            Swal.fire("Error", "No se pudo eliminar la consola", "error");
+        }
+    } else {
+        Swal.fire("Cancelado", "Cancelado a peticion del usuario", "info");
+    }
+};
+
 const cargarTabla = (consolas) =>{
     let tbody = document.querySelector("#tbody-consolas");
+    tbody.innerHTML = "";
     
     consolas.forEach((c)=>{
         let tr = document.createElement("tr");
@@ -16,6 +39,7 @@ const cargarTabla = (consolas) =>{
         btnEliminar.innerText="Eliminar";
         btnEliminar.classList.add('btn', 'btn-danger');
         btnEliminar.idConsola = c.id;
+        btnEliminar.addEventListener("click", iniciarEliminacion);
         tdAcciones.appendChild(btnEliminar);
 
         tr.appendChild(tdNombre);
